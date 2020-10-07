@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.listOfChampions__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > * {
+        margin: 30px 0;
+        padding-bottom: 25px;
+    }
+}
+
+
+.championCard__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    position: relative;
+    border: 1px solid darken($color: #eee, $amount: 60);
+    border-radius: 25px;
+
+    .championCard__champInfo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1em;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        color: white;
+        border-bottom-right-radius: 25px;
+        border-top-left-radius: 25px;
+        font-family: cursive;
+        text-transform: capitalize;
+        
+    }
+
+    img {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        width: 100%;
+    }
+
+    p {
+        margin: 15px;
+        text-align: justify;
+    }
+
+    button {
+        background-color: transparent;
+        padding: 10px;
+        border: 1px solid rgb(148, 148, 148);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+}
+
+.championCard__statsBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 5px auto;
+
+    &-innerBar {
+        // background-color: rgb(8, 88, 180);
+        // background-color: darken($color: #0858B4, $amount: 0);
+        padding: 5px;
+        border-radius: 25px;
+
+        span {
+            margin-left: 2px;
+        }
+    }
+
+    &-innerBar--inner-1 {
+        background-color: darken($color: #dc2f02, $amount: 0);
+    }
+
+    &-innerBar--inner-2 {
+        background-color: darken($color: #399b6f, $amount: 0);
+    }
+
+    &-innerBar--inner-3 {
+        background-color: darken($color: #0858B4, $amount: 0);
+    }
+
+    &-innerBar--inner-4 {
+        background-color: darken($color: #7b2cbf, $amount: 0);
+    }
+
+    .flexprueba {
+        flex-basis: 60%;
+    }
+    
+    &-innerBarContainer {
+        flex-basis: 60%;
+        margin-left: 5px;
+        // background-color: rgb(121, 179, 255);
+        // background-color: lighten($color: #0858B4, $amount: 40);
+        color: white;
+        padding: -5px;
+        border-radius: 25px;
+
+        &--outter-1 {
+            background-color: lighten($color: #dc2f02, $amount: 40);
+        }
+
+        &--outter-2 {
+            background-color: lighten($color: #399b6f, $amount: 40);
+        }
+
+        &--outter-3 {
+            background-color: lighten($color: #0858B4, $amount: 40);
+        }
+
+        &--outter-4 {
+            background-color: lighten($color: #7b2cbf, $amount: 40);
+        }
+    }
+}

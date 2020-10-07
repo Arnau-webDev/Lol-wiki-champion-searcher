@@ -12,7 +12,7 @@ export const ListOfChampions = () => {
     console.log(arrayOfChampions)
 
 	return (
-		<div>
+		<div className="listOfChampions__container">
             {arrayOfChampions ? arrayOfChampions.map((champion) => <ChampionCard champion={champion}  key={champion.id} />) : <p>No hay champions</p>}
 		</div>
 	);
