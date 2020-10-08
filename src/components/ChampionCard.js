@@ -11,7 +11,7 @@ export const ChampionCard = ({champion}) => {
                 <h3>{champion.name}</h3>
                 <small>{champion.title}</small>
             </div>
-            <p>{champion.blurb}</p>
+            <p className="championCard__blurb">{champion.blurb}</p>
             <div className="championCard__statsBar">
                 <p>Attack Damage</p>
                 <div className="flexprueba">

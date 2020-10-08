@@ -8,10 +8,12 @@ import {
 
 import { ListOfChampions } from '../components/ListOfChampions';
 import { ChampionInfo } from '../components/ChampionInfo';
+import { MainPageHeader } from '../components/MainPageHeader';
 
 export const MainRouter = () => {
 	return (
 		<>
+			<MainPageHeader />
 			<Router>
 				<Switch>
 					<Route exact path="/" component={ListOfChampions} />

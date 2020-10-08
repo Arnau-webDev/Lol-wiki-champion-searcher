@@ -18,6 +18,7 @@ export const useFetchAll = (endpoint) => {
 	}, [endpoint]);
 
 	return {
-		champions,
+        champions,
+        setChampions,
 	};
 };
