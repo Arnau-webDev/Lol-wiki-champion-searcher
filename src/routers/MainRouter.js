@@ -6,19 +6,16 @@ import {
 	Redirect,
 } from 'react-router-dom';
 
-import { ListOfChampions } from '../components/ListOfChampions';
-import { ChampionInfo } from '../components/ChampionInfo';
-import { MainPageHeader } from '../components/MainPageHeader';
+import { ChampionInfoScreen } from '../components/ChampionInfoScreen';
+import { HomeScreen } from '../components/HomeScreen';
 
 export const MainRouter = () => {
 	return (
 		<>
-			<MainPageHeader />
 			<Router>
 				<Switch>
-					<Route exact path="/" component={ListOfChampions} />
-					<Route path="/single-champion" component={ChampionInfo} />
-					<Route path="/single-champion/:championId" component={ChampionInfo} />
+					<Route exact path="/" component={HomeScreen} />
+					<Route path="/single-champion/:championId" component={ChampionInfoScreen} />
 
 					<Redirect to="/" />
 				</Switch>

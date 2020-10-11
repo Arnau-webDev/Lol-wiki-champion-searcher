@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ChampionInfo = () => {
+export const ChampionInfoScreen = () => {
 	return <div>Champion Info</div>;
 };

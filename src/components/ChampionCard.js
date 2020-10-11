@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const ChampionCard = ({champion}) => {
-    console.log(champion.id);
     const { attack, defense, magic, difficulty } = champion.info;
     return (
         <div className="championCard__card">

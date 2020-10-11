@@ -1,12 +1,39 @@
-import React from 'react'
+import React from 'react';
+import filterChampionsByClass from '../helpers/filterChampionsByClass';
+import filterChampionsByStats from '../helpers/filterChampionsByStats';
 
-export const MainPageHeader = () => {
+export const MainPageHeader = ({ champions, setFilteredChampions }) => {
+
+    const handleClassFilter = (e) => {
+        filterChampionsByClass(e, champions, setFilteredChampions);
+    }
+    
+    const handleStatsFilter = (e) => {
+        filterChampionsByStats(e, champions, setFilteredChampions);
+    }
+
     return (
         <div className="mainPageHeader__container">
             <div className="mainPageHeader__title">
                 <h1> <span className="small">FIND YOUR</span> <br/> <span className="big">CHAMPION</span></h1>
             </div>
-            <div className="mainPageHeader__filters">These are some filters</div>
+            <div className="mainPageHeader__filters">
+                <ul onClick={handleClassFilter}>
+                    <li>All</li>
+                    <li>Assassins</li>
+                    <li>Fighters</li>
+                    <li>Mages</li>
+                    <li>Marksman</li>
+                    <li>Supports</li>
+                    <li>Tanks</li>
+                </ul>
+                <ul onClick={handleStatsFilter}>
+                    <li>Most Attack</li>
+                    <li>Most Magic</li>
+                    <li>Most Defense</li>
+                    <li>Most Difficulty</li>
+                </ul>
+            </div>
         </div>
     )
 }
