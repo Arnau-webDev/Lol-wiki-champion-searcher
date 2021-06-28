@@ -14,10 +14,10 @@ export const MainPageHeader = ({ champions, setFilteredChampions }) => {
 
     return (
         <div className="mainPageHeader__container">
-            <div className="mainPageHeader__title">
+            <div className="mainPageHeader__title animate__animated animate__fadeInLeft">
                 <h1> <span className="small">FIND YOUR</span> <br/> <span className="big">CHAMPION</span></h1>
             </div>
-            <div className="mainPageHeader__filters">
+            <div className="mainPageHeader__filters animate__animated animate__fadeInRight">
                 <ul onClick={handleClassFilter}>
                     <li>All</li>
                     <li>Assassins</li>

@@ -5,7 +5,7 @@ const filterChampionsByStats = (e, champions, setFilteredChampions) => {
 
     console.log(statToFilter);
     console.log(champions[0].info)
-    console.log(champions[0].info.[statToFilter])
+    console.log(champions[0].info.[statToFilter]);
 
     const filteredChampionsByStats = champions.filter((champion) => {
         return champion.info.[statToFilter] === 10;

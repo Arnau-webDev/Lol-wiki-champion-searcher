@@ -3,13 +3,18 @@ import { useState } from 'react';
 
 export const useFetchAll = (endpoint) => {
 	const [champions, setChampions] = useState({});
+    const [loading, setLoading] = useState(true);
 
     const getChampions = async (endpoint) => {
         const response = await fetch(endpoint);
         const json  = await response.json();
         const result = await json;
 
-        setChampions(result.data)
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+
+        setChampions(result.data);
         console.log(result);
     };
 
@@ -20,5 +25,6 @@ export const useFetchAll = (endpoint) => {
 	return {
         champions,
         setChampions,
+        loading
 	};
 };
