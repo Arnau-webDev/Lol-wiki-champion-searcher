@@ -12,7 +12,7 @@ export const useFetchAll = (endpoint) => {
 
         setTimeout(() => {
             setLoading(false);
-        }, 1500);
+        }, 1000);
 
         setChampions(result.data);
         console.log(result);
