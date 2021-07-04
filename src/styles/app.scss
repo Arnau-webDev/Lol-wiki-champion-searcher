@@ -11,7 +11,11 @@
     // background-color: rgba(168, 164, 161, 0.568);
     background-color: rgba(226, 164, 164, 0.568);
     // background-color: rgba(102,155,188,.8);
+    background-color: #000913;
+    color: wheat;
     min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .listOfChampions__container {
@@ -34,10 +38,15 @@
     align-items: center;
     width: 400px;
     position: relative;
-    border: 1px solid darken($color: #c28f2c, $amount: 0);
+    border: 2px solid darken($color: #c28f2c, $amount: 0);
     border-radius: 15px;
     transition: all .3s ease;
-    font-size: .9rem;
+    font-size: 1rem;
+    font-family: 'Staatliches', cursive;
+
+    .championCard__buttonContainer {
+        width: 75%;
+    }
 
     .championCard__champInfo {
         position: absolute;
@@ -60,23 +69,24 @@
     }
 
     p {
-        margin: 15px 25px;
+        margin: 15px 5px;
         text-align: justify;
     }
 
     button {
-        background-color: transparent;
         margin-top: 12px;
         padding: 10px;
         border: 1px solid darken($color: #745f36, $amount: 10);
         border-radius: 10px;
         cursor: pointer;
         transition: all .3s ease;
+        color: white;
+        background-color: #c28f2c;
+        border: 1px solid transparent;
+        width: 100%;
 
         &:hover {
-            color: white;
-            background-color: #c28f2c;
-            border: 1px solid transparent;
+            transform: scale(1.1);
         }
     }
 
@@ -85,8 +95,10 @@
     }
 
     .championCard__blurb {
-        font-family: 'Eczar', serif;
+        font-family: 'Satisfy', cursive;
         line-height: 16px;
+        margin: 15px 25px;
+        text-align: justify;
     }
     
 }
@@ -160,9 +172,11 @@
         align-items: center;
         max-height: 180px;
         z-index: 200;
-        position: fixed;
-        background-color: rgba(255,255,255,.8);
+        // position: fixed;
+        // background-color: rgba(255,255,255,.8);
         width: 100vw;
+        font-family: 'Staatliches', cursive;
+        font-size: 1.2rem;
     }
 
     &__title {
@@ -179,26 +193,33 @@
         .small {
             font-weight: 600;
         }
-    
+        
         .big {
             font-size: 60px;
             font-weight: 600;
         }
     }
-
+    
     &__filters {
         margin-right: 100px;
-
+        text-transform: uppercase;
+        
         ul {
             display: flex;
             justify-content: center;
             align-items: center;
             list-style: none;
             flex-wrap: wrap;
-
+            
             & > li {
                 margin: 8px 15px;
                 cursor: pointer;
+                border-bottom: 1px solid transparent;
+                transition: all .3s ease;
+                
+                &:hover {
+                    border-bottom: 1px solid #c28f2c;
+                }
             }
         }
     }
@@ -210,22 +231,36 @@
     justify-content: space-between;
     align-items: center;
 
+    div {
+        margin: 15px 0;
+    }
+    
     &__mainImageContainer {
-        width: 500px;
+        max-width: 800px;
 
         img {
             width: 100%;
         }
+    }
+
+    .spell {
+        padding: 10px;
+        max-width: 500px;
+        border: 1px solid wheat;
+        border-radius: 10px;
+        font-family: 'Satisfy', cursive;
     }
     
     &__spellDiv {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
 
         div {
             margin: 0 5px;
         }
+
     }
 }
 
@@ -240,7 +275,6 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #efcbcb;
 }
 
 .loading__spinner {
