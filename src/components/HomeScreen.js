@@ -15,10 +15,11 @@ export const HomeScreen = () => {
     return (
         <>
             <MainPageHeader champions={championsArr} setFilteredChampions={setFilteredChampions} />
-            <p>Falta millorar hover filters, boto fixed per tornar a dalt, millorar ui championInfoScreen</p>
+            <p>Falta millorar hover filters, funcionalitat boto fixed, afegir previous skins funcionality</p>
             {loading && <LoadingSpinner />}
             {/* <div className="filler"></div> */}
             <ListOfChampions champions={championsArr} filteredChampions={filteredChampions} />
+            <div className="arrowUp"><i class="fas fa-long-arrow-alt-up"></i></div>
         </>
     )
 }
