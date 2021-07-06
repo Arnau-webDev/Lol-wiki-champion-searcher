@@ -26,6 +26,7 @@ export const ChampionInfoScreen = () => {
 
 	const handleRevealSpellInfo = (e) => {
 		const { target } = e;
+		console.log(window.innerWidth);
 
 		const activeSpellImage = document.querySelector(".first");
 		activeSpellImage && activeSpellImage.classList.remove("active");
@@ -36,7 +37,10 @@ export const ChampionInfoScreen = () => {
 		});
 
 		const spellToShow = document.querySelector(`.${target.id}`);
-		spellToShow.style.display = "block";
+
+		if (window.innerWidth > "900") {
+			spellToShow.style.display = "block";
+		}
 	}
 
 	useEffect(() => {
@@ -73,11 +77,9 @@ export const ChampionInfoScreen = () => {
 								)
 							}
 							return (
-								<>
-									<div key={spell.id}>
-										<img onMouseMove={handleRevealSpellInfo} id={spell.id} src={`https://ddragon.leagueoflegends.com/cdn/11.13.1/img/spell/${spell.id}.png`} alt={spell.name} />
-									</div>
-								</>
+								<div key={spell.id}>
+									<img onMouseMove={handleRevealSpellInfo} id={spell.id} src={`https://ddragon.leagueoflegends.com/cdn/11.13.1/img/spell/${spell.id}.png`} alt={spell.name} />
+								</div>
 							)
 						})
 					}
@@ -88,14 +90,14 @@ export const ChampionInfoScreen = () => {
 						activeChampion.spells.map((spell, spellIndex) => {
 							if (spellIndex === 0) {
 								return (
-									<div className={`spell firstSpell ${spell.id} animate__animated animate__fadeIn`} >
+									<div key={spell.id} className={`spell firstSpell ${spell.id} animate__animated animate__fadeIn`} >
 										<h2>{spell.name.toUpperCase()}</h2>
 										<p>{spell.description}</p>
 									</div>
 								)
 							}
 							return (
-								<div className={`spell ${spell.id} animate__animated animate__fadeIn`} style={{ display: "none" }}>
+								<div key={spell.id} className={`spell ${spell.id} animate__animated animate__fadeIn`} style={{ display: "none" }}>
 									<h2>{spell.name.toUpperCase()}</h2>
 									<p>{spell.description}</p>
 								</div>
@@ -105,8 +107,8 @@ export const ChampionInfoScreen = () => {
 				</div>
 
 				<div className="championInfoScreen__infoContainer__buttonDiv">
-					<button onClick={handleSkinChange}><i class="fas fa-mask"></i> See Next Skin</button>
-					<button onClick={() => history.push("/")}><i class="fas fa-arrow-left"></i> Go Back</button>
+					<button onClick={handleSkinChange}><i className="fas fa-mask"></i> See Next Skin</button>
+					<button onClick={() => history.push("/")}><i className="fas fa-arrow-left"></i> Go Back</button>
 				</div>
 			</div>
 		</>

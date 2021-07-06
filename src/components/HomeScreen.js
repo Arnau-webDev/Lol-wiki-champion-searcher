@@ -12,14 +12,25 @@ export const HomeScreen = () => {
     const [filteredChampions, setFilteredChampions] = useState([]);
     const championsArr = Object.values(champions);
 
+    const handleScroll = () => {
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollUpEl = document.querySelector(".arrowUp");
+
+        if (scrollPosition > 200) {
+            scrollUpEl && scrollUpEl.classList.remove("hidden");
+        } else {
+            scrollUpEl && scrollUpEl.classList.add("hidden");
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
     return (
         <>
             <MainPageHeader champions={championsArr} setFilteredChampions={setFilteredChampions} />
-            <p>Falta millorar hover filters, funcionalitat boto fixed, afegir previous skins funcionality</p>
             {loading && <LoadingSpinner />}
-            {/* <div className="filler"></div> */}
             <ListOfChampions champions={championsArr} filteredChampions={filteredChampions} />
-            <div className="arrowUp"><i class="fas fa-long-arrow-alt-up"></i></div>
+            <a className="arrowUp hidden" href="#mainPageHeader"><i className="fas fa-long-arrow-alt-up"></i></a>
         </>
     )
 }
