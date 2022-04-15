@@ -47,6 +47,8 @@ html {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 2300px;
+    margin: 0 auto;
 
     & > * {
         margin: 30px 0;
@@ -78,7 +80,7 @@ html {
     font-family: 'Staatliches', cursive;
 
     .championCard__buttonContainer {
-        width: 75%;
+        width: 90%;
     }
 
     .championCard__champInfo {
@@ -125,7 +127,7 @@ html {
     }
 
     &:hover {
-        transform: scale(1.02) translateY(-10px);
+        transform: translateY(-10px);
     }
 
     .championCard__blurb {
@@ -214,6 +216,8 @@ html {
         width: 100vw;
         font-family: 'Staatliches', cursive;
         font-size: 1.2rem;
+        max-width: 2300px;
+        margin: 0 auto;
 
         @media (max-width: 1200px) {
             flex-direction: column;
@@ -284,6 +288,7 @@ html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     div {
         margin: 15px 0;
@@ -360,7 +365,7 @@ html {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        bottom: 15px;
+        bottom: -100px;
         
         button {
             display: block;
@@ -372,12 +377,12 @@ html {
             border: 2px solid white;
             border-radius: 10px;
             margin: 15px;
-            transition: transform .2s ease;
+            transition: transform .3s ease;
             
             &:hover {
                 color: wheat;
                 border: 2px solid wheat;
-                transform: scale(1.05);
+                transform: translateY(-5px);
             }
 
             &:active {
