@@ -1,10 +1,11 @@
 
-const filterChampionsByClass = (e, champions, setFilteredChampions) => {
+const filterChampionsByClass = (e, champions, setFilteredChampions, setActiveFilter) => {
     const filter = e.target.innerText;
     let wordToFilter = "";
 
     if (filter === "ALL") {
         setFilteredChampions(champions);
+        setActiveFilter("ALL");
     }
 
     if (filter.charAt(filter.length - 1) === "S") {

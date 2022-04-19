@@ -78,6 +78,8 @@ html {
     transition: all .3s ease;
     font-size: 1rem;
     font-family: 'Staatliches', cursive;
+    margin-left: 10px;
+    margin-right: 10px;
 
     .championCard__buttonContainer {
         width: 90%;
@@ -254,6 +256,10 @@ html {
         margin-right: 100px;
         text-transform: uppercase;
         
+        .active {
+            border-bottom: 2px solid #c28f2c;
+        }
+
         ul {
             display: flex;
             justify-content: center;
@@ -291,22 +297,28 @@ html {
     
     @media screen and (max-width: 900px) {
         position: relative;
+
+        div:not(.exclude) {
+            margin: 15px 0;
+        }
     }
 
-    div {
-        margin: 15px 0;
-    }
 
     h3 {
         font-family: 'Staatliches', cursive;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         letter-spacing: 1px;
         font-weight: normal;
+        margin-top: 8px;
     }
 
     
     &__mainImageContainer {
         max-width: 800px;
+
+        @media screen and (min-width: 1400px) {
+            margin-top: 25px;
+        }
 
         img {
             width: 100%;
@@ -318,12 +330,12 @@ html {
     }
 
     .spell {
-        padding: 20px;
+        padding: 10px 20px;
         max-width: 800px;
         border-radius: 10px;
         border: 2px solid wheat;
         font-family: 'Satisfy', cursive;
-        margin: 0;
+        margin-top: 17px;
         
         h2 {
             font-family: 'Staatliches', cursive;
@@ -331,9 +343,45 @@ html {
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
+    }
 
-        @media (max-width: 775px) {
-            visibility: hidden;
+    .headerMobile {
+        font-family: 'Staatliches', cursive;
+        font-weight: 500;
+        font-size: 1.5rem;
+        width: 85%;
+        margin-left: 15px;
+        text-align: left;
+
+        @media screen and (max-width: 600px) {
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+
+    .spellMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: 'Satisfy', cursive;
+        width: 85%;
+
+        @media screen and (max-width: 600px) {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 90%;
+            margin: 10px auto;
+
+            & div:first-child {
+                display: none;
+            }
+        }
+
+        div {
+            margin: 0 10px;
         }
     }
     
@@ -362,17 +410,35 @@ html {
 
     }
 
+    &__spellDivMobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
     &__buttonDiv {
         width: 500px;
         text-align: center;
         display: flex;
         justify-content: space-between;
-        position: absolute;
-        bottom: 25px;
+
+        @media screen and (min-height: 890px) {
+            position: absolute;
+            bottom: 5px;
+        }
 
         @media screen and (max-width: 900px) {
-            position: absolute;
-            bottom: -100px;
+            position: inherit;
+        }
+
+        @media screen and (max-width: 600px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         
         button {
@@ -402,26 +468,26 @@ html {
             margin-right: 5px;
         }
         
-        @media (max-width: 775px) {
-            display: none;
-        }
+        // @media (max-width: 775px) {
+        //     display: none;
+        // }
 
-        @media (max-height: 900px) {
-            display: none;
-        }
+        // @media (max-height: 900px) {
+        //     display: none;
+        // }
     }
 
-    @media (min-width: 2000px) {
-        margin-top: 50px;
-    }
+    // @media (min-width: 2000px) {
+    //     margin-top: 50px;
+    // }
 
-    @media (max-width: 775px) {
-        margin-top: 35px;
-    }
+    // @media (max-width: 775px) {
+    //     margin-top: 35px;
+    // }
 
-    @media (max-width: 900px) {
-        margin-top: 50px;
-    }
+    // @media (max-width: 900px) {
+    //     margin-top: 50px;
+    // }
 
 }
 

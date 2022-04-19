@@ -1,11 +1,14 @@
 import React from 'react';
+import { useState } from 'react';
 import filterChampionsByClass from '../helpers/filterChampionsByClass';
 import filterChampionsByStats from '../helpers/filterChampionsByStats';
 
 export const MainPageHeader = ({ champions, setFilteredChampions, setLoading }) => {
 
+    const [activeFilter, setActiveFilter] = useState("ALL");
+
     const handleClassFilter = (e) => {
-        filterChampionsByClass(e, champions, setFilteredChampions);
+        filterChampionsByClass(e, champions, setFilteredChampions, setActiveFilter);
         setLoading(true);
         setTimeout(() => { setLoading(false); }, 300);
     }
@@ -22,20 +25,20 @@ export const MainPageHeader = ({ champions, setFilteredChampions, setLoading }) 
                 <h1> <span className="small">FIND YOUR</span> <br /> <span className="big">CHAMPION</span></h1>
             </div>
             <div className="mainPageHeader__filters animate__animated animate__fadeInRight">
-                <ul onClick={handleClassFilter}>
-                    <li>All</li>
-                    <li>Assassins</li>
-                    <li>Fighters</li>
-                    <li>Mages</li>
-                    <li>Marksman</li>
-                    <li>Supports</li>
-                    <li>Tanks</li>
+                <ul>
+                    <li onClick={handleClassFilter}>All</li>
+                    <li onClick={handleClassFilter}>Assassins</li>
+                    <li onClick={handleClassFilter}>Fighters</li>
+                    <li onClick={handleClassFilter}>Mages</li>
+                    <li onClick={handleClassFilter}>Marksman</li>
+                    <li onClick={handleClassFilter}>Supports</li>
+                    <li onClick={handleClassFilter}>Tanks</li>
                 </ul>
-                <ul onClick={handleStatsFilter}>
-                    <li>Most Attack</li>
-                    <li>Most Magic</li>
-                    <li>Most Defense</li>
-                    <li>Most Difficulty</li>
+                <ul>
+                    <li onClick={handleStatsFilter}>Most Attack</li>
+                    <li onClick={handleStatsFilter}>Most Magic</li>
+                    <li onClick={handleStatsFilter}>Most Defense</li>
+                    <li onClick={handleStatsFilter}>Most Difficulty</li>
                 </ul>
             </div>
         </div>
