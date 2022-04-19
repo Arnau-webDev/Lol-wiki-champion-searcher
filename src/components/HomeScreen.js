@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFetchAll } from '../hooks/useFetchAll';
 import { ListOfChampions } from './ListOfChampions';
 import LoadingSpinner from './LoadingSpinner';
@@ -8,7 +8,7 @@ export const HomeScreen = () => {
 
     const ENDPOINT = 'http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json';
 
-    const { champions, loading } = useFetchAll(ENDPOINT);
+    const { champions, loading, setLoading } = useFetchAll(ENDPOINT);
     const [filteredChampions, setFilteredChampions] = useState([]);
     const championsArr = Object.values(champions);
 
@@ -27,7 +27,7 @@ export const HomeScreen = () => {
 
     return (
         <>
-            <MainPageHeader champions={championsArr} setFilteredChampions={setFilteredChampions} />
+            <MainPageHeader champions={championsArr} setFilteredChampions={setFilteredChampions} setLoading={setLoading} />
             {loading && <LoadingSpinner />}
             <ListOfChampions champions={championsArr} filteredChampions={filteredChampions} />
             <a className="arrowUp hidden" href="#mainPageHeader"><i className="fas fa-long-arrow-alt-up"></i></a>

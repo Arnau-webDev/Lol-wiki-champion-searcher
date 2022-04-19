@@ -21,9 +21,11 @@ export const useFetchAll = (endpoint) => {
         getChampions(endpoint);
     }, [endpoint]);
 
+
     return {
         champions,
         setChampions,
-        loading
+        loading,
+        setLoading
     };
 };

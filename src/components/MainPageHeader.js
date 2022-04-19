@@ -2,14 +2,18 @@ import React from 'react';
 import filterChampionsByClass from '../helpers/filterChampionsByClass';
 import filterChampionsByStats from '../helpers/filterChampionsByStats';
 
-export const MainPageHeader = ({ champions, setFilteredChampions }) => {
+export const MainPageHeader = ({ champions, setFilteredChampions, setLoading }) => {
 
     const handleClassFilter = (e) => {
         filterChampionsByClass(e, champions, setFilteredChampions);
+        setLoading(true);
+        setTimeout(() => { setLoading(false); }, 300);
     }
 
     const handleStatsFilter = (e) => {
         filterChampionsByStats(e, champions, setFilteredChampions);
+        setLoading(true);
+        setTimeout(() => { setLoading(false); }, 300);
     }
 
     return (
