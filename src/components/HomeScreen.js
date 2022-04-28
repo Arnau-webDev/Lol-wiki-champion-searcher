@@ -6,7 +6,7 @@ import { MainPageHeader } from './MainPageHeader';
 
 export const HomeScreen = () => {
 
-    const ENDPOINT = 'http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json';
+    const ENDPOINT = 'https://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json';
 
     const { champions, loading, setLoading } = useFetchAll(ENDPOINT);
     const [filteredChampions, setFilteredChampions] = useState([]);

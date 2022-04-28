@@ -5,7 +5,7 @@ export const ChampionCard = ({ champion }) => {
     const { attack, defense, magic, difficulty } = champion.info;
     return (
         <div className="championCard__card">
-            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id.trim()}_0.jpg`} alt="champion splashart" />
+            <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id.trim()}_0.jpg`} alt="champion splashart" />
             <div className="championCard__champInfo">
                 <h3>{champion.name}</h3>
                 <small>{champion.title}</small>
